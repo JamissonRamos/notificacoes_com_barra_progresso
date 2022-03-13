@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    min-width: 300px;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f2f2f2;
+
+    overflow: hidden;
+}
+
+.notifications
+{
+    max-width: 800px;
+    min-width: 350px;
+    max-height: 200px;
+
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    padding: 20px 35px 20px 25px;
+
+    border-radius: 12px;
+    border-left: 6px solid ; /* Esse valor vai ser mudadr de acordo a chamado do car, pelo js */
+
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.5);
+
+    overflow: auto;
+    transform: translateX(calc(100% + 350px));
+    transition: all 0.9s cubic-bezier(0.68,-0.55,0.265,2.50) ;
+   
+}
+
+.notifications.active
+{
+    transform: translateX(0%);
+}
+
+.notifications .notifications_content
+{
+    display: flex;
+    align-items: center;
+}
+
+
+.notifications_content .box_icone
+{
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+    
+    border-radius: 50%;
+
+    font-size: 20px;
+    color: #fff;
+
+
+}
+
+.notifications_content .messagen
+{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 20px;
+}
+
+.messagen .text_one
+{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.messagen .text_two
+{
+    font-size: 18px;
+    font-weight: 400;
+    color: #313131;
+}
+
+.notifications .close
+{
+
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    padding: 5px;
+
+    cursor: pointer;
+
+    transition: .2s linear;
+    opacity: 0.7;
+    
+}
+
+.notifications .close:hover
+{
+    opacity: 1;
+
+    transition: all .8s ease-in-out;
+
+    transform: rotate(175deg);
+}
+
+
+.notifications .progress
+{
+    width: 100%;
+    height: 4px;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: #fff;
+}
+
+.notifications .progress::before
+{
+    content: '';
+
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background-color: var(--bg);
+
+}
+
+
+.progress.active::before
+{
+    animation: barraProgress 5s linear forwards;
+}
+
+.btn button
+{
+    width: 185px;
+    height: 36px;
+
+    border: none;
+
+    margin: 0 10px;
+    padding: 30x 45px;
+
+    background-color: transparent;
+
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: .5s linear;
+}
+
+button.success
+{
+    border: 1px solid green;
+    border-radius: 18px;
+
+    color: green;
+}
+
+button.alert
+{
+    border: 1px solid orange;
+    border-radius: 18px;
+
+    color: orange;
+}
+
+button.erro
+{
+    border: 1px solid red;
+    border-radius: 18px;
+
+    color: red;
+}
+
+button.success:hover
+{
+    color: #fff;
+    background-color: green;
+}
+
+button.alert:hover
+{
+    color: #fff;
+    background-color: orange;
+}
+
+button.erro:hover
+{
+   
+    color: #fff;
+    background-color: red;
+}
+
+@keyframes barraProgress{
+    
+    20%{ right: 0;}
+    
+    100%{ right: 100%; }
+}
+
