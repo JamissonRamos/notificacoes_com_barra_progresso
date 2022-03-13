@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificação com animada com barra de progresso</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    
+    <div id="idNotifications" class="notifications">
+
+        <div id="idNotificationsContent" class="notifications_content"> 
+            
+            <div id="idBoxIcone" class="box_icone">
+
+                <span id="idIcone" class="material-icons">check</span>
+
+                <!-- <span class="material-icons">warning_amber</span> -->
+
+                <!-- <span class="material-icons">close</span> -->
+                
+                <img src="gif.gif" alt="Foto para clip" width="350" height="240" style="position:absolute;clip: rect(90px, 280px, 160px, 80px); " /> 
+            </div>
+
+            <div class="messagen">
+
+                <span id="idtitle" class="text_one"> ****** </span>
+
+                <span id="idMsg" class="text_two"> ******* </span>
+
+            </div> 
+        </div> <!-- fim da div notifications_content -->
+
+        <span id="idClose" class=" material-icons close">close</span>
+
+        <div id="idBarraProgreco" class="progress"></div> <!-- fim da div progress -->
+
+    </div> <!-- fim da div notifications -->
+
+    <div class="btn">
+
+        <button id="btn1" class="success">Notificação Sucesso </button>
+
+        <button id="btn2" class="alert">Notificação Aleta </button>
+
+        <button id="btn3" class="erro">Notificação Erro </button>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
